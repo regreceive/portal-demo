@@ -1,0 +1,16 @@
+node_modules
+.changelog
+.umi
+.umi-test
+.umi-production
+.DS_Store
+dist
+
+/npm-debug.log*
+/yarn-error.log
+/yarn.lock
+/package-lock.json
+/lerna-debug.log
+coverage
+
+.idea
