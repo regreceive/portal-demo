@@ -1,8 +1,14 @@
 import { FC } from 'react';
-import { Widget } from 'k2-portal';
+import { portal, Widget } from 'k2-portal';
 
-const Portal: FC = (props) => {
-  return <Widget src="/apps/lancang" style={{ height: '100%' }} appRoot />;
+const Portal: FC = () => {
+  return (
+    <Widget
+      src="/entry"
+      appProps={{ appKey: portal.currAppKey }}
+      style={{ height: '100%' }}
+    />
+  );
 };
 
 export default Portal;

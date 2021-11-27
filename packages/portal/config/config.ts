@@ -9,7 +9,7 @@ export default defineConfig({
   nodeModulesTransform: {
     type: 'none',
   },
-  base: '/app/',
+  base: '/',
   history: { type: 'hash' },
   publicPath: './',
   hash: true,

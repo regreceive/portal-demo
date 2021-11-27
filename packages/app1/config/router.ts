@@ -12,7 +12,7 @@ const routes: IBestAFSRoute[] = [
       {
         path: '.',
         component: '@/pages/Home',
-        title: 'App3.0',
+        title: 'Home',
       },
       {
         path: './page1',
@@ -21,10 +21,6 @@ const routes: IBestAFSRoute[] = [
       },
     ],
   },
-  {
-    path: '/child',
-    component: '@/pages/Child',
-  }
 ];
 
 export default routes;
