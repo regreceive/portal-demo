@@ -5,10 +5,12 @@ const portal: IConfigFromPlugins['portal'] = {
   appKey: 'test',
   /** nacos 如果打开注释，会自动请求线上配置，其配置会覆盖与本地service合并 */
   // nacos: '/nacos/v1/cs/configs?dataId=dfem.front.portal&group=default',
-  service: {
-    influxdb: '/repo/repo-data/dfem_point_test_influxdb',
-    repo: '/repo/repos/dfem_point_test_influxdb',
+  appDefaultProps: {
+    appKey: 'app1',
   },
+  // mainApp: {
+  //   appPath: '/web/demo/apps'
+  // }
 };
 
 export default portal;
