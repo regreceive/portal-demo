@@ -1,5 +1,5 @@
 {
-  "name": "demo",
+  "name": "portal-monorepo-demo",
   "private": true,
   "devDependencies": {
     "lerna": "^4.0.0"
