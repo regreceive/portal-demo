@@ -1,6 +1,6 @@
 {
-  "private": true,
-  "name": "portal",
+  "name": "third-party",
+  "version": "0.0.0",
   "scripts": {
     "start": "umi dev",
     "build": "umi build",
@@ -24,13 +24,15 @@
     "@ant-design/pro-layout": "^6.5.0",
     "@umijs/preset-react": "1.x",
     "k2-portal": "^2.0.0",
-    "oidc-client": "^1.11.5",
+    "paper": "^0.12.15",
+    "three": "^0.135.0",
     "umi": "^3.5.17"
   },
   "devDependencies": {
     "@types/lodash": "^4.14.170",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
+    "@types/three": "^0.134.0",
     "@umijs/test": "^3.5.17",
     "lint-staged": "^10.0.7",
     "prettier": "^2.2.0",

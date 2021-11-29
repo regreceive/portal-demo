@@ -1,0 +1,29 @@
+.title {
+  display: flex;
+  align-items: center;
+  padding: 0 0 10px 0;
+
+  &:not(:first-child) {
+    padding-top: 30px;
+  }
+
+  &.alone {
+    padding-bottom: 0;
+  }
+
+  .text {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-bottom: 0;
+    color: #1890ff;
+    font-size: 18px;
+    font-weight: bold;
+
+    svg {
+      fill: unset;
+      font-size: 14px;
+    }
+  }
+}

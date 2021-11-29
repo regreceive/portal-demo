@@ -1,12 +1,14 @@
 import { FC, useCallback, useEffect, useState } from 'react';
 import { Menu } from 'antd';
-import { portal, Widget } from 'k2-portal';
+import { portal, Widget, useAppProps } from 'k2-portal';
 import styles from './style.less';
 
-const defaultAppKey = 'app1';
+const defaultAppKey = 'antd-ui';
 
 const Home: FC = () => {
   const [currAppKey, setCurrAppKey] = useState(defaultAppKey);
+  const appProps = useAppProps<{ appKey: string }>();
+
   const handleClick = useCallback((e) => {
     portal.openApp(e.key, '');
     setCurrAppKey(e.key);
@@ -25,11 +27,17 @@ const Home: FC = () => {
     }
   }, []);
 
+  useEffect(() => {
+    if (appProps.appKey) {
+      setCurrAppKey(appProps.appKey);
+    }
+  }, [appProps.appKey]);
+
   return (
     <div className={styles.entry}>
       <Menu selectedKeys={[currAppKey]} onClick={handleClick} mode="horizontal">
-        <Menu.Item key="app1">app1</Menu.Item>
-        <Menu.Item key="app2">app2</Menu.Item>
+        <Menu.Item key="antd-ui">antd-ui</Menu.Item>
+        <Menu.Item key="third-party">third-party</Menu.Item>
       </Menu>
       <Widget
         src="/prevent-recursive-self-call"
