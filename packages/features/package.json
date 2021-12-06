@@ -1,6 +1,7 @@
 {
   "private": true,
-  "name": "portal-app",
+  "version": "0.0.0",
+  "name": "features",
   "scripts": {
     "start": "umi dev",
     "build": "umi build",

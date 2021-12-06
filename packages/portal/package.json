@@ -1,5 +1,6 @@
 {
   "private": true,
+  "version": "0.0.0",
   "name": "portal",
   "scripts": {
     "start": "umi dev",
