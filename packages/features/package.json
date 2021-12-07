@@ -23,7 +23,9 @@
   },
   "dependencies": {
     "@ant-design/pro-layout": "^6.5.0",
+    "@apollo/client": "^3.5.5",
     "@umijs/preset-react": "1.x",
+    "graphql": "^16.0.1",
     "k2-portal": "^2.0.4",
     "oidc-client": "^1.11.5",
     "umi": "^3.5.20"

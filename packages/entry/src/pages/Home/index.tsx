@@ -38,6 +38,7 @@ const Home: FC = () => {
       <Menu selectedKeys={[currAppKey]} onClick={handleClick} mode="horizontal">
         <Menu.Item key="antd-ui">antd-ui</Menu.Item>
         <Menu.Item key="third-party">third-party</Menu.Item>
+        <Menu.Item key="features">新特性</Menu.Item>
       </Menu>
       <Widget
         src="/prevent-recursive-self-call"

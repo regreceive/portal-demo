@@ -1,7 +1,12 @@
 declare module '*.css';
 declare module '*.less';
 declare module '*.png';
-declare module '*.gql';
+declare module '*.gql' {
+  const content: {
+    [key: string]: any;
+  };
+  export default content;
+}
 declare module '*.svg' {
   export function ReactComponent(
     props: React.SVGProps<SVGSVGElement>,

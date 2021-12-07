@@ -1,4 +1,11 @@
-{
+query menu {
+  bcf_front_menu {
+    title
+    app_key
+  }
+}
+
+query menu1 {
   bcf_front_menu {
     title
     app_key
