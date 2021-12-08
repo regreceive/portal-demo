@@ -2,9 +2,10 @@ declare module '*.css';
 declare module '*.less';
 declare module '*.png';
 declare module '*.gql' {
+  import { DocumentNode } from 'graphql';
   const content: {
     [key: string]: {
-      gql: () => any;
+      gql: DocumentNode;
       send: (variables?: any) => Promise<{ data: any }>;
     };
   };

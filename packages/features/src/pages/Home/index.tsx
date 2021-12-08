@@ -5,7 +5,7 @@ import BoxArea from '@/components/BoxArea';
 import query from './menu.gql';
 
 const Home: FC = () => {
-  const [getMenu, { data }] = useLazyQuery(query.menu.gql());
+  const [getMenu, { data }] = useLazyQuery(query.menu.gql);
 
   return (
     <>
