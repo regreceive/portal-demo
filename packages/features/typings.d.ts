@@ -3,7 +3,10 @@ declare module '*.less';
 declare module '*.png';
 declare module '*.gql' {
   const content: {
-    [key: string]: any;
+    [key: string]: {
+      gql: () => any;
+      send: (variables?: any) => Promise<{ data: any }>;
+    };
   };
   export default content;
 }

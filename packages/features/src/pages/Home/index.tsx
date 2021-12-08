@@ -1,11 +1,11 @@
 import { FC, useCallback, useState } from 'react';
 import { Button, Typography } from 'antd';
-import { api, useLazyQuery } from 'k2-portal';
+import { useLazyQuery } from 'k2-portal';
 import BoxArea from '@/components/BoxArea';
 import query from './menu.gql';
 
 const Home: FC = () => {
-  const [getMenu, { data }] = useLazyQuery(query.menu);
+  const [getMenu, { data }] = useLazyQuery(query.menu.gql());
 
   return (
     <>
