@@ -10,7 +10,7 @@ const Portal: FC = () => {
   }, [location.pathname]);
 
   return (
-    <Widget src="/entry" appProps={{ appKey }} style={{ height: '100%' }} />
+    <Widget src="/entry" appProps={{ appKey }} style={{ height: '100%', overflow: 'hidden auto' }} />
   );
 };
 

@@ -1,3 +1,4 @@
+# 请求菜单
 query menu {
   bcf_front_menu {
     title
@@ -5,9 +6,10 @@ query menu {
   }
 }
 
-query menu1 {
-  bcf_front_menu {
-    title
-    app_key
+#请求应用
+query apps {
+  bcf_front_apps {
+    key
+    name
   }
 }
