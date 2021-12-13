@@ -17,7 +17,7 @@ const Home: FC = () => {
             使用代理方式，制造出一个半封闭的子应用沙盒。能够适配大多数基于 dom
             事件的开源库。对于一些使用独特方式获得自身 doc 的
             <Typography.Text mark>主流组件</Typography.Text>
-            （比如Paper.js），可以通过修改沙盒增加对这类组件的支持。非主流组件不好救的话推荐放弃。
+            （比如Paper.js），可以通过修改沙盒增加对这类组件的支持。非主流组件不好救🚑的话建议放弃。
           </blockquote>
         </Typography.Paragraph>
       </BoxArea>
