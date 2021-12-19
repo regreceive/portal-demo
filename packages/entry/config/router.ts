@@ -2,15 +2,17 @@ import { IBestAFSRoute } from '@umijs/plugin-layout/src/types/interface';
 
 const routes: IBestAFSRoute[] = [
   {
-    path: '/prevent-recursive-self-call'
+    path: '/',
+    redirect: '/app',
   },
   {
     path: '/',
     component: '@/layouts/BasicLayout',
     routes: [
+      { path: './app', exact: false, component: '@/pages/Home' },
+      { path: './blank', exact: false, component: '@/pages/Blank' },
       {
-        component: '@/pages/Home',
-        title: 'Entry Demo',
+        redirect: '/app',
       },
     ],
   },

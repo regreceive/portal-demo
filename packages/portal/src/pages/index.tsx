@@ -5,12 +5,16 @@ import { useLocation } from 'umi';
 const Portal: FC = () => {
   const location = useLocation();
 
-  const appKey = useMemo(() => {
-    return portal.currAppKey;
+  const [appKey, layout] = useMemo(() => {
+    return [portal.currAppKey, portal.currLayout];
   }, [location.pathname]);
 
   return (
-    <Widget src="/entry" appProps={{ appKey }} style={{ height: '100%', overflow: 'hidden auto' }} />
+    <Widget
+      src={`/entry/#/${layout}`}
+      appProps={{ appKey }}
+      style={{ height: '100%', overflow: 'hidden auto' }}
+    />
   );
 };
 
