@@ -2,16 +2,16 @@ import { FC } from 'react';
 import { Button } from 'antd';
 import { useLazyQuery, Widget } from 'k2-portal';
 import BoxArea from '@/components/BoxArea';
-import query from './menu.gql';
+import service from '@/services/menu.gql';
 import styles from './style.less';
 
 const code = `import { FC } from 'react';
 import { Button } from 'antd';
 import { useLazyQuery } from 'k2-portal';
-import query from './menu.gql';
+import service from './menu.gql';
 
 const Home: FC = () => {
-  const [getMenu, { data }] = useLazyQuery(query.menu.gql);
+  const [getMenu, { data }] = useLazyQuery(service.menu.gql);
 
   return (
     <>
@@ -33,7 +33,9 @@ export default Home;
 `;
 
 const Home: FC = () => {
-  const [getMenu, { data }] = useLazyQuery(query.menu.gql);
+  const [getMenu, { data }] = useLazyQuery(service.menu.gql, {
+    variables: { id: '2' },
+  });
 
   return (
     <>
@@ -45,7 +47,10 @@ const Home: FC = () => {
             </pre>
             <Button
               onClick={() => {
+                // hook方式
                 getMenu();
+                // promise方式
+                service.menu.send({ id: '2' });
               }}
               style={{ position: 'absolute', right: 5, top: 5 }}
             >

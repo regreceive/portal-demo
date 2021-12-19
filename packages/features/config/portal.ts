@@ -7,6 +7,7 @@ const portal: IConfigFromPlugins['portal'] = {
   nacos: {
     // url: '/nacos/v1/cs/configs?dataId=dfem.front.portal&group=default',
     default: {
+      appRootPathName: '/web/demo/apps',
       service: {
         graphql: 'bcf/graphql',
       },
