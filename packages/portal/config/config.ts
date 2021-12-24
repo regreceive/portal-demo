@@ -20,4 +20,5 @@ export default defineConfig({
   ignoreMomentLocale: true,
   manifest: {},
   proxy: proxy[(process.env.REACT_APP_ENV as 'dev') || 'dev'],
+  copy: ['src/assets/favicon.ico'],
 });

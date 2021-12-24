@@ -5,7 +5,6 @@ import {
   Alert,
   Button,
   Dropdown,
-  Divider,
   Input,
   Menu,
   Modal,
@@ -18,6 +17,7 @@ import {
   Timeline,
 } from 'antd';
 import { history } from 'umi';
+import {useAppProps} from 'k2-portal'
 import BoxArea from '@/components/BoxArea';
 import styles from './style.less';
 
@@ -96,6 +96,9 @@ const data: any[] = [
 
 const Home: FC = () => {
   const [isModalVisible, setIsModalVisible] = useState(false);
+  const appProps = useAppProps();
+  console.log(appProps);
+  
 
   return (
     <BoxArea title="Antd UI">
@@ -175,7 +178,7 @@ const Home: FC = () => {
           </Button>
           <a
             onClick={() => {
-              history.push('/page');
+              history.push({ pathname: '/page', query: { a: 1, b: 2 } } as any);
             }}
           >
             路由跳转

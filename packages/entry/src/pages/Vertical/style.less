@@ -1,0 +1,57 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 48px;
+  padding: 0 20px;
+  background-color: var(--portal-boxArea-bgColor);
+  line-height: 48px;
+  border-bottom: 2px solid var(--basicLayout-bgColor);
+}
+
+.action {
+  display: flex;
+  align-items: center;
+  height: 48px;
+  padding: 0 12px;
+  cursor: pointer;
+  transition: all 0.3s;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.025);
+  }
+
+  &.icon {
+    font-size: 18px;
+  }
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  height: 64px;
+  padding: 10px;
+
+  &.collapsed {
+    justify-content: center;
+
+    h1 {
+      display: none;
+      margin: 0;
+    }
+  }
+
+  img {
+    height: 40px;
+  }
+
+  h1 {
+    margin: 0 0 0 12px;
+    font-size: 20px;
+    color: rgba(255, 255, 255, 0.85);
+    font-family: 'Myriad Pro', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+}

@@ -1,10 +1,32 @@
-.entry {
+.header {
   display: flex;
-  flex-direction: column ;
-  height: 100%;
+  align-items: center;
+  column-gap: 40px;
+  padding: 0 20px;
 
-  .app {
-    flex: 1;
-    overflow: auto;
+  :global {
+    .ant-menu {
+      flex: auto;
+    }
+  }
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  height: 64px;
+
+  img {
+    height: 40px;
+  }
+
+  h1 {
+    margin: 0 0 0 6px;
+    font-size: 20px;
+    color: rgba(255, 255, 255, 0.85);
+    font-family: 'Myriad Pro', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    white-space: nowrap;
+    overflow: hidden;
   }
 }

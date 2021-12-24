@@ -10,6 +10,7 @@ const routes: IBestAFSRoute[] = [
     component: '@/layouts/BasicLayout',
     routes: [
       { path: './app', exact: false, component: '@/pages/Home' },
+      { path: './vertical', exact: false, component: '@/pages/Vertical' },
       { path: './blank', exact: false, component: '@/pages/Blank' },
       {
         redirect: '/app',

@@ -5,10 +5,9 @@ const portal: IConfigFromPlugins['portal'] = {
   appKey: 'portal',
   role: 'portal',
   nacos: {
-    url: '/nacos/v1/cs/configs?dataId=dfem.front.portal&group=default',
     default: {
-      appRootPathName: '/web/demo/apps',
-      ssoAuthorityUrl: 'https://dfem.k2assets.k2/oauth2',
+      appRootPathName: '/apps',
+      // ssoAuthorityUrl: 'https://dfem.k2assets.k2/oauth2',
     },
   },
 };

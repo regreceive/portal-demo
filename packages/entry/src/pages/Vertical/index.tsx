@@ -1,20 +1,22 @@
-import { FC, useCallback, useEffect, useState } from 'react';
+import { FC, useCallback, useEffect, useState, createElement } from 'react';
 import { Layout, Menu } from 'antd';
 import {
+  MenuUnfoldOutlined,
+  MenuFoldOutlined,
   UserOutlined,
   VideoCameraOutlined,
   UploadOutlined,
 } from '@ant-design/icons';
 import { portal, Widget, useAppProps } from 'k2-portal';
 import ThemeSelector from '@/components/ThemeSelector';
-import logo from '@/assets/logo.png';
 import styles from './style.less';
 
 const defaultAppKey = 'antd-ui';
 
 const Home: FC = () => {
+  const [collapsed, setCollapsed] = useState(false);
   const [currAppKey, setCurrAppKey] = useState(defaultAppKey);
-  const appProps = useAppProps<{ appKey: string }>();
+  const appProps = useAppProps<{ appKey: string; theme?: { name: string } }>();
 
   const handleClick = useCallback((e) => {
     portal.openApp(e.key, '', { replace: true });
@@ -40,19 +42,24 @@ const Home: FC = () => {
     }
   }, [appProps.appKey]);
 
+  const toggle = useCallback(() => {
+    setCollapsed((state) => !state);
+  }, []);
+
   return (
-    <Layout>
-      <Layout.Header className={styles.header}>
-        <div className={styles.logo}>
-          <img src={logo} />
+    <Layout style={{ height: '100%' }}>
+      <Layout.Sider collapsed={collapsed} width={230}>
+        <div className={`${styles.logo} ${collapsed ? styles.collapsed : ''}`}>
+          <img
+            src={
+              collapsed
+                ? require('@/assets/logo2.png')
+                : require('@/assets/logo.png')
+            }
+          />
           <h1>k2-portal demo</h1>
         </div>
-        <Menu
-          selectedKeys={[currAppKey]}
-          onClick={handleClick}
-          mode="horizontal"
-          theme="dark"
-        >
+        <Menu selectedKeys={[currAppKey]} onClick={handleClick} theme="dark">
           <Menu.Item key="antd-ui" icon={<UserOutlined />}>
             antd-ui
           </Menu.Item>
@@ -63,11 +70,19 @@ const Home: FC = () => {
             新特性
           </Menu.Item>
         </Menu>
-        <ThemeSelector whiteIcon />
-      </Layout.Header>
-      <Layout.Content>
-        <Widget src="" appRoot className={styles.app} />
-      </Layout.Content>
+      </Layout.Sider>
+      <Layout>
+        <Layout.Header className={styles.header}>
+          {createElement(collapsed ? MenuUnfoldOutlined : MenuFoldOutlined, {
+            style: { fontSize: 18 },
+            onClick: toggle,
+          })}
+          <ThemeSelector />
+        </Layout.Header>
+        <Layout.Content style={{ overflow: 'hidden auto' }}>
+          <Widget src="" appRoot style={{ height: '100%' }} />
+        </Layout.Content>
+      </Layout>
     </Layout>
   );
 };

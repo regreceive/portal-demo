@@ -29,7 +29,9 @@ const Editor: FC = () => {
       run();
     });
 
-    run();
+    setTimeout(() => {
+      run();
+    }, 100);
 
     return () => {
       editorInstance.current?.dispose();
