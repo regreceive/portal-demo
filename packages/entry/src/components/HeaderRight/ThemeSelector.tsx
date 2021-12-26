@@ -1,7 +1,7 @@
 import { FC, useMemo } from 'react';
 import { Menu, Dropdown } from 'antd';
 import { FormatPainterOutlined } from '@ant-design/icons';
-import { portal, useAppProps } from 'k2-portal';
+import { portal, useAppProps, useMessage } from 'k2-portal';
 import styles from './style.less';
 
 type Props = {
@@ -9,22 +9,24 @@ type Props = {
 };
 
 const ThemeSelector: FC<Props> = (props) => {
-  const appProps = useAppProps<any>();
+  const message = useMessage();
 
   const menu = useMemo(() => {
+    console.log('hello');
+    
     return (
       <Menu
         onClick={(e) => {
           portal.setTheme(e.key);
         }}
-        selectedKeys={[appProps.theme?.name ?? '']}
+        selectedKeys={[message['portal.theme']?.name ?? '']}
       >
         {portal.config.antdThemes.map((theme) => (
           <Menu.Item key={theme.name}>{theme.name}</Menu.Item>
         ))}
       </Menu>
     );
-  }, [appProps.theme]);
+  }, [message['portal.theme']]);
 
   return (
     <Dropdown overlay={menu} className={`${styles.action} ${styles.icon}`}>

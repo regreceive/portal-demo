@@ -17,7 +17,6 @@ import {
   Timeline,
 } from 'antd';
 import { history } from 'umi';
-import {useAppProps} from 'k2-portal'
 import BoxArea from '@/components/BoxArea';
 import styles from './style.less';
 
@@ -96,9 +95,6 @@ const data: any[] = [
 
 const Home: FC = () => {
   const [isModalVisible, setIsModalVisible] = useState(false);
-  const appProps = useAppProps();
-  console.log(appProps);
-  
 
   return (
     <BoxArea title="Antd UI">

@@ -6,7 +6,7 @@ import {
   UploadOutlined,
 } from '@ant-design/icons';
 import { portal, Widget, useAppProps } from 'k2-portal';
-import ThemeSelector from '@/components/ThemeSelector';
+import HeaderRight from '@/components/HeaderRight';
 import logo from '@/assets/logo.png';
 import styles from './style.less';
 
@@ -41,7 +41,7 @@ const Home: FC = () => {
   }, [appProps.appKey]);
 
   return (
-    <Layout>
+    <Layout className={styles.layout}>
       <Layout.Header className={styles.header}>
         <div className={styles.logo}>
           <img src={logo} />
@@ -63,9 +63,9 @@ const Home: FC = () => {
             新特性
           </Menu.Item>
         </Menu>
-        <ThemeSelector whiteIcon />
+        <HeaderRight whiteIcon />
       </Layout.Header>
-      <Layout.Content>
+      <Layout.Content className={styles.content}>
         <Widget src="" appRoot className={styles.app} />
       </Layout.Content>
     </Layout>

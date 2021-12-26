@@ -6,9 +6,10 @@ import {
   UserOutlined,
   VideoCameraOutlined,
   UploadOutlined,
+  GitlabOutlined,
 } from '@ant-design/icons';
 import { portal, Widget, useAppProps } from 'k2-portal';
-import ThemeSelector from '@/components/ThemeSelector';
+import HeaderRight from '@/components/HeaderRight';
 import styles from './style.less';
 
 const defaultAppKey = 'antd-ui';
@@ -77,10 +78,11 @@ const Home: FC = () => {
             style: { fontSize: 18 },
             onClick: toggle,
           })}
-          <ThemeSelector />
+
+          <HeaderRight />
         </Layout.Header>
-        <Layout.Content style={{ overflow: 'hidden auto' }}>
-          <Widget src="" appRoot style={{ height: '100%' }} />
+        <Layout.Content style={{ overflow: 'auto' }}>
+          <Widget src="" appRoot />
         </Layout.Content>
       </Layout>
     </Layout>
