@@ -5,6 +5,7 @@ import {
   InsertRowLeftOutlined,
 } from '@ant-design/icons';
 import { useLocation, history } from 'umi';
+import { portal } from 'k2-portal';
 import ThemeSelector from './ThemeSelector';
 import styles from './style.less';
 

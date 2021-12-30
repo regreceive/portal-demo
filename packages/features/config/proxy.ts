@@ -6,7 +6,7 @@ export default {
       // pathRewrite: { '^/nacos/': '/' },
     },
     '/bcf': {
-      target: 'http://10.1.10.224:31070/',
+      target: 'http://10.1.101.122:31070/',
       changeOrigin: true,
     },
     '/web': {
