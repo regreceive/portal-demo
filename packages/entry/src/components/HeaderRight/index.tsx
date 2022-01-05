@@ -27,11 +27,17 @@ const HeaderRight: FC<Props> = (props) => {
       <a
         className={styles.action}
         onClick={() => {
-          const pathname =
-            layout === 'vertical'
-              ? location.pathname.replace('vertical', 'app')
-              : location.pathname.replace('app', 'vertical');
-          history.replace(pathname);
+          if (layout === 'vertical') {
+            portal.openApp(portal.currAppKey, '', {
+              replace: true,
+              layout: 'app',
+            });
+          } else {
+            portal.openApp(portal.currAppKey, '', {
+              replace: true,
+              layout: 'vertical',
+            });
+          }
         }}
       >
         {createElement(
@@ -41,13 +47,13 @@ const HeaderRight: FC<Props> = (props) => {
           { style: { fontSize: 18 } },
         )}
       </a>
-      <ThemeSelector whiteIcon={props.whiteIcon} />
       <a
         href="https://gitlab.kstonedata.k2/liyao/portal-monorepo-dem"
         className={styles.action}
       >
         <GitlabOutlined style={{ fontSize: 18 }} /> GitLab
       </a>
+      <ThemeSelector whiteIcon={props.whiteIcon} />
     </div>
   );
 };

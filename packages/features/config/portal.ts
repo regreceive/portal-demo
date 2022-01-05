@@ -7,7 +7,7 @@ const portal: IConfigFromPlugins['portal'] = {
     default: {
       appRootPathName: '/web/demo/apps',
       service: {
-        graphql: 'bcf/graphql',
+        graphql: 'bcf_dev/graphql',
       },
     },
   },

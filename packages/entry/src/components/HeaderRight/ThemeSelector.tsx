@@ -27,7 +27,7 @@ const ThemeSelector: FC<Props> = (props) => {
   }, [currTheme]);
 
   return (
-    <Dropdown overlay={menu} className={`${styles.action} ${styles.icon}`}>
+    <Dropdown overlay={menu} className={`${styles.action} ${styles.icon}`} d>
       <FormatPainterOutlined
         style={props.whiteIcon ? { color: 'white' } : {}}
       />

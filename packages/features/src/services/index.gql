@@ -1,8 +1,9 @@
 # 请求菜单
-query menu($id: String) {
-  bcf_front_menu(filter: {id: $id}) {
+query menu($title: String) {
+  bcf_front_menu(filter: {title: $title}) {
+    id
+    menu_id
     title
-    app_key
   }
 }
 

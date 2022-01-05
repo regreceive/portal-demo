@@ -6,6 +6,9 @@ const portal: IConfigFromPlugins['portal'] = {
   nacos: {
     default: {
       appRootPathName: '/apps',
+      service: {
+        graphql: '/bcf_dev/graphql',
+      },
     },
   },
 };

@@ -3,7 +3,7 @@ module.exports = {
   extensions: {
     endpoints: {
       default: {
-        url: "http://10.1.10.224:31070/bcf/graphql",
+        url: "http://10.1.101.122:31070/bcf_dev/graphql",
       },
     },
   },
