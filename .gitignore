@@ -5,6 +5,7 @@ node_modules
 .umi-production
 .DS_Store
 dist
+tiles-cache
 
 /npm-debug.log*
 /yarn-error.log
