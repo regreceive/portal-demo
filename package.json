@@ -6,5 +6,10 @@
   ],
   "devDependencies": {
     "lerna": "^4.0.0"
-  }
+  },
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@gitlab.kstonedata.k2:liyao/portal-monorepo-dem.git",
+  "author": "liang.shanheng <liangshanheng@K2data.com.cn>",
+  "license": "MIT"
 }

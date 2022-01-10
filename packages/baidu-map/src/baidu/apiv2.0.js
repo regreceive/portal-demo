@@ -6830,8 +6830,10 @@ window.TILE_VERSION = {
                 l = Ub('normal'),
                 m = 1;
               this.map.Xx() && (m = 2);
-              l =
-                'customimage/tile?&x=' +
+              //l = 'customimage/';// liangshanheng
+              l = 'customimage/';
+              l +=
+                'tile?&x=' +
                 e +
                 '&y=' +
                 k +
@@ -6846,7 +6848,12 @@ window.TILE_VERSION = {
               l = a.styleStr
                 ? l + ('&styles=' + encodeURIComponent(a.styleStr))
                 : l + ('&customid=' + a.style);
-              return c[Math.abs(e + k) % c.length] + l;
+              console.log(l);
+              var path = c[Math.abs(e + k) % c.length] + l;
+              console.log(path);
+              //path = "http://localhost:3101/" + l;
+              console.log(path);
+              return path;
             };
             break;
           }
@@ -7318,13 +7325,15 @@ window.TILE_VERSION = {
       B.url.proto + B.url.domain.TILE_BASE_URLS[2],
       B.url.proto + B.url.domain.TILE_BASE_URLS[3],
     ],
-    // 录制瓦片
+    // 录制瓦片 liangshanheng
     Td = [
-      // B.url.proto + B.url.domain.TILE_ONLINE_URLS[0] + '/tile/',
-      'http://localhost:3101/tile/',
+      //B.url.proto + B.url.domain.TILE_ONLINE_URLS[0] + '/tile/', //原生访问路径
+      'http://localhost:3101/tile/', //由李尧提供的对于图片的拉取服务
+      //'/tiles-cache/',//计划用于拉取图片后使用的本地路径未测试。
     ],
     Ud = { dark: 'dl', light: 'll', normal: 'pl' },
     Vd = new Dd();
+    console.log("point-3");
     console.log(B.url.proto + B.url.domain.TILE_ONLINE_URLS[0] + '/tile/');
   Vd.xO = o;
   Vd.getTilesUrl = function (a, b, c) {
@@ -7335,8 +7344,8 @@ window.TILE_VERSION = {
       c = Ud[c];
     this.map.Xx() && (f = 2);
     d = this.map.gb.os(d, b).nm;
-    return (
-      Td[Math.abs(d + a) % Td.length] +
+    //debugger//liangshanheng 用于断点
+    var path = (Td[Math.abs(d + a) % Td.length] +
       '?qt=vtile&x=' +
       (d + '').replace(/-/gi, 'M') +
       '&y=' +
@@ -7352,7 +7361,13 @@ window.TILE_VERSION = {
       e +
       '&from=jsapi2_0'
     ).replace(/-(\d+)/gi, 'M$1');
+    //console.log(path);
+    //liangshanheng 访问本地 但该修改
+    //path = (Td[Math.abs(d + a) % Td.length] + b + '/' + (d + '').replace(/-/gi, 'M') + '-' + (a + '').replace(/-/gi, 'M') + '.png');
+    console.log(path); //liangshanheng 用于查看最后返回结果，可以通过修改该值，修改查看本地的图片。注意有数个地方都有类似修改，且每个地方对应不同的地图图片类型需要更具需要进行修改。此处修改可能并不是我们需要的修改位置。
+    return path;
   };
+  console.log(Vd)//liangshanheng 
   var Na = new Rd('\u5730\u56fe', Vd, {
       tips: '\u663e\u793a\u666e\u901a\u5730\u56fe',
       maxZoom: 19,
