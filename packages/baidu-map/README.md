@@ -9,19 +9,17 @@ https://gitlab.kstonedata.k2/liyao/portal-monorepo-dem
 1. 项目需要安装 nodejs 作为，获取静态页面的服务。正式发布时不需要。
 2. 项目可由 yarn 命令启动 `yarn run dev`
 3. 项目主要代码位于`./packages/baidu-map/src/baidu`目录下。
-   src
-   -baidu
-   -tiles-cache --拉取的地图数据保存地址
-   -apiv2.0.js --百度地图服务。替换现有百度地图引用链接
-   -tileServer.js --依赖于 nodejs 的百度地图图片保存服务 使用 `node tileServer.js`启动服务
-   -AreaRestriction.js --依赖于 nodejs 的百度地图图片保存服务
-   -demo.html --测试页 A
-   -xiongan.html --测试页 B
-   -data.js --测试页 A 数据
-   -data.xiongan.js --测试页 B 数据
-   -jquery.min.js --测试静态资源
-   -gps.js --测试页 B 方法
-   -index.tsx --首页
+   - tiles-cache --拉取的地图数据保存地址
+   - apiv2.0.js --百度地图服务。替换现有百度地图引用链接
+   - tileServer.js --依赖于 nodejs 的百度地图图片保存服务 使用 `node tileServer.js`启动服务
+   - AreaRestriction.js --依赖于 nodejs 的百度地图图片保存服务
+   - demo.html --测试页 A
+   - xiongan.html --测试页 B
+   - data.js --测试页 A 数据
+   - data.xiongan.js --测试页 B 数据
+   - jquery.min.js --测试静态资源
+   - gps.js --测试页 B 方法
+   - index.tsx --首页
 4. 在发布时理论上仅需使用`tiles-cache`和`api2.0.js`即可。
 5. 使用步骤，首先通过该项目拉取需要的图片，然后修改 apiv2.0.js 相应的配置，使之可以访问本地下载好的图片。
 
