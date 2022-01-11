@@ -2,6 +2,7 @@ import { FC, useEffect, useRef } from 'react';
 import * as echarts from 'echarts';
 import '@/baidu/apiv2.0';
 import '@/baidu/AreaRestriction';
+import '@/baidu/modules';
 import 'echarts/extension/bmap/bmap';
 import BoxArea from '@/components/BoxArea';
 
