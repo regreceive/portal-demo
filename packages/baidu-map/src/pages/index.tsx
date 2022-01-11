@@ -18,7 +18,7 @@ const Home: FC = () => {
     const myChart = echarts.init(ref.current!);
     myChart.setOption({
       title: {
-        text: '全国主要城市空气质量',
+        text: '离线地图',
       },
       bmap: {
         roam: true,
