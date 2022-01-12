@@ -6810,9 +6810,8 @@ window.TILE_VERSION = {
               '2' == B.kz
                 ? [B.url.proto + B.url.domain.main_domain_cdn.other[0] + '/']
                 : [
-                    B.url.proto + B.url.domain.main_domain_cdn.baidu[0] + '/',
-                    B.url.proto + B.url.domain.main_domain_cdn.baidu[1] + '/',
-                    B.url.proto + B.url.domain.main_domain_cdn.baidu[2] + '/',
+                    // B.url.proto + B.url.domain.main_domain_cdn.baidu[0] + '/',
+                    'http://localhost:3101/',
                   ],
             d = 0,
             e;
@@ -7318,7 +7317,7 @@ window.TILE_VERSION = {
     ],
     // 录制瓦片
     Td = [
-      //B.url.proto + B.url.domain.TILE_ONLINE_URLS[0] + '/tile/',
+      // B.url.proto + B.url.domain.TILE_ONLINE_URLS[0] + '/tile/',
       'http://localhost:3101/tile/',
     ],
     Ud = { dark: 'dl', light: 'll', normal: 'pl' },

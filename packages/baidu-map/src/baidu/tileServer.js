@@ -43,6 +43,9 @@ app.use(async (ctx) => {
         encoding: null,
       },
       (err, res, body) => {
+        if (err) {
+          console.log(err);
+        }
         resolve(body);
       },
     ).pipe(fs.createWriteStream(currTile));

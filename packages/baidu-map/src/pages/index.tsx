@@ -28,17 +28,31 @@ const Home: FC = () => {
     const bmap = myChart.getModel().getComponent('bmap').getBMap();
     const point = new BMap.Point(118.78, 31.04);
     bmap.centerAndZoom(point, 7);
-    bmap.setMaxZoom(16);
-    bmap.setMinZoom(5);
-    const bounds = new BMap.Bounds(
-      new BMap.Point(111.64, 26.4),
-      new BMap.Point(125.95, 35.28),
-    );
-    BMapLib.AreaRestriction.setBounds(bmap, bounds);
+    // bmap.setMaxZoom(16);
+    // bmap.setMinZoom(5);
+    
+    // const bounds = new BMap.Bounds(
+    //   new BMap.Point(111.64, 26.4),
+    //   new BMap.Point(125.95, 35.28),
+    // );
+    // BMapLib.AreaRestriction.setBounds(bmap, bounds);
+
+
+    bmap.setMapStyle({
+      styleJson: [
+        {
+          featureType: 'water',
+          elementType: 'all',
+          stylers: {
+            color: '#044161',
+          },
+        },
+      ],
+    });
 
     return () => {
       myChart.dispose();
-    }
+    };
   }, []);
 
   return (
