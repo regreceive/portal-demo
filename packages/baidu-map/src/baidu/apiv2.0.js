@@ -3382,7 +3382,12 @@ window.TILE_VERSION = {
     return p;
   }
   function ra(a, b) {
-    if (a.includes('qt=verify') || a.includes('qt=cen')) return; // 禁止验证
+    if (
+      a.includes('qt=verify') ||
+      a.includes('qt=cen') ||
+      a.includes('qt=vtile')
+    )
+      return; // 禁止验证
     if (b) {
       var c = (1e5 * Math.random()).toFixed(0);
       B._rd['_cbk' + c] = function (a) {

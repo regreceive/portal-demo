@@ -36,24 +36,32 @@ app.use(async (ctx) => {
   mkdirSync(dstpath);
 
   // 保存百度瓦片数据
-  return new Promise((resolve) => {
+  return new Promise((resolve, reject) => {
     request(
       {
         url: `${tileUrl}?${ctx.querystring}&styles=${styles}`,
         encoding: null,
       },
       (err, res, body) => {
-        if (err) {
-          console.log(err);
+        if (res.statusCode === 200) {
+          resolve(body);
+          return;
         }
-        resolve(body);
+        reject();
       },
     ).pipe(fs.createWriteStream(currTile));
-  }).then((png) => {
-    tileSet.add(currTile);
-    ctx.type = 'png';
-    ctx.body = png;
-  });
+  })
+    .then((png) => {
+      tileSet.add(currTile);
+      ctx.type = 'png';
+      ctx.body = png;
+    })
+    .catch(() => {
+      ctx.status = 404;
+      ctx.type = 'text';
+      ctx.body = 'not found';
+      return;
+    });
 });
 
 app.listen(3101);
