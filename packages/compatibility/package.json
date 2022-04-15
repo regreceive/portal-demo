@@ -24,8 +24,11 @@
   "dependencies": {
     "@ant-design/pro-layout": "^6.5.0",
     "@umijs/preset-react": "1.x",
+    "jointjs": "^3.5.5",
     "k2-portal": "^2.0.0",
     "paper": "^0.12.15",
+    "react-dnd": "^16.0.0",
+    "react-dnd-html5-backend": "^16.0.0",
     "three": "^0.135.0",
     "umi": "^3.5.17"
   },

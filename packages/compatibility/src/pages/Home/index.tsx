@@ -5,6 +5,8 @@ import BoxArea from '@/components/BoxArea';
 import StaticBar from './components/StaticBar';
 import PaperDemo from './components/PaperDemo';
 import ThreeDemo from './components/ThreeDemo';
+import ReactDndDemo from './components/ReactDnd';
+import JointDemo from './components/JointDemo';
 import styles from './style.less';
 
 const Home: FC = () => {
@@ -16,7 +18,7 @@ const Home: FC = () => {
             k2-portal
             使用代理方式，制造出一个半封闭的子应用沙盒。能够适配大多数基于 dom
             事件的开源库。对于使用独特方式获得自身 doc 的主流组件
-            （比如Paper.js），可以通过修改沙盒增加对这类组件的支持。非主流组件不好救🚑的话建议放弃。
+            （比如Paper.js），可以通过修改沙盒增加对这类组件的支持。
           </blockquote>
         </Typography.Paragraph>
       </BoxArea>
@@ -44,6 +46,12 @@ const Home: FC = () => {
             appProps={{ value: "alert('Hello World!')" }}
             style={{ height: '100%' }}
           />
+        </BoxArea>
+        <BoxArea title="React-dnd">
+          <ReactDndDemo />
+        </BoxArea>
+        <BoxArea title="Joint">
+          <JointDemo />
         </BoxArea>
       </div>
     </>

@@ -1,0 +1,16 @@
+# 请求菜单
+query menu($title: String) {
+  bcf_front_menu(filter: {title: $title}) {
+    id
+    menu_id
+    title
+  }
+}
+
+#请求应用
+query apps {
+  bcf_front_apps {
+    key
+    name
+  }
+}

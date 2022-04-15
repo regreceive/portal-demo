@@ -25,9 +25,7 @@ const Editor: FC = () => {
       theme: 'vs-dark',
     });
 
-    parent.window.addEventListener('resize', () => {
-      run();
-    });
+    parent.window.addEventListener('resize', run);
 
     setTimeout(() => {
       run();
@@ -35,6 +33,7 @@ const Editor: FC = () => {
 
     return () => {
       editorInstance.current?.dispose();
+      parent.window.removeEventListener('resize', run);
     };
   }, []);
 

@@ -5,10 +5,10 @@ export default {
       changeOrigin: true,
       // pathRewrite: { '^/nacos/': '/' },
     },
-    '/apps/features/': {
+    '/apps/compatibility/': {
       target: 'http://localhost:3101',
       changeOrigin: true,
-      pathRewrite: {'^/apps/features/': '/'},
+      pathRewrite: {'^/apps/compatibility/': '/'},
     },
     '/apps': {
       target: 'http://192.168.130.100:8342',
