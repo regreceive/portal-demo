@@ -17,7 +17,4 @@ export default defineConfig({
   ignoreMomentLocale: true,
   manifest: {},
   proxy: proxy[(process.env.REACT_APP_ENV as 'dev') || 'dev'],
-  chainWebpack(config) {
-    config.module.rule('mjs-rule').test(/.m?js/).resolve.set('fullySpecified', false);
-  }
 });
