@@ -47,11 +47,8 @@ const HeaderRight: FC<Props> = (props) => {
           { style: { fontSize: 18 } },
         )}
       </a>
-      <a
-        href="https://k2-portal-demo.vercel.app/"
-        className={styles.action}
-      >
-        <GithubOutlined style={{ fontSize: 18 }} /> GitLab
+      <a href="https://k2-portal-demo.vercel.app/" className={styles.action}>
+        <GithubOutlined style={{ fontSize: 18 }} />
       </a>
       <ThemeSelector whiteIcon={props.whiteIcon} />
     </div>

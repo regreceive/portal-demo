@@ -29,9 +29,4 @@ process.execSync("cp -r ./packages/features/dist/* ./dist/apps/features/");
 
 process.execSync("mkdir -p dist/apps/editor");
 process.execSync("yarn workspace editor build");
-console.log("editor compiles done.");
-try {
-  process.execSync("cp -r ./packages/editor/dist/* ./dist/apps/editor/");
-} catch(e) {
-  console.log(e)
-}
+process.execSync("cp -r ./packages/Editor/dist/* ./dist/apps/editor/");
