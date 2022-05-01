@@ -49,7 +49,18 @@ const Home: FC = () => {
 
   return (
     <>
-      <BoxArea title="建模器3.0请求示例" height={300}>
+      <BoxArea
+        title="建模器3.0请求示例"
+        height={300}
+        rightArea={
+          <a
+            href="https://k2-portal-demo.vercel.app/apps/features/"
+            target="_blank"
+          >
+            打开独立应用
+          </a>
+        }
+      >
         <div className={styles.grid2}>
           <div
             style={{ position: 'relative', height: '100%', overflow: 'auto' }}

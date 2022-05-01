@@ -12,7 +12,18 @@ import styles from './style.less';
 const Home: FC = () => {
   return (
     <>
-      <BoxArea title="兼容性说明" style={{ marginBottom: 12 }}>
+      <BoxArea
+        title="兼容性说明"
+        style={{ marginBottom: 12 }}
+        rightArea={
+          <a
+            href="https://k2-portal-demo.vercel.app/apps/compatibility/"
+            target="_blank"
+          >
+            打开独立应用
+          </a>
+        }
+      >
         <Typography.Paragraph>
           <blockquote>
             k2-portal

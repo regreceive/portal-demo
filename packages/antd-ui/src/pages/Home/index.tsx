@@ -97,7 +97,17 @@ const Home: FC = () => {
   const [isModalVisible, setIsModalVisible] = useState(false);
 
   return (
-    <BoxArea title="Antd UI">
+    <BoxArea
+      title="Antd UI"
+      rightArea={
+        <a
+          href="https://k2-portal-demo.vercel.app/apps/antd-ui/"
+          target="_blank"
+        >
+          打开独立应用
+        </a>
+      }
+    >
       <div className={styles.grid}>
         <div>
           <Dropdown

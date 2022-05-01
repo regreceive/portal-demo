@@ -1,5 +1,5 @@
 {
-  "name": "portal-monorepo-demo",
+  "name": "k2-portal-demo",
   "private": true,
   "workspaces": [
     "packages/*"

@@ -1,6 +1,6 @@
 import { FC, useMemo, createElement } from 'react';
 import {
-  GitlabOutlined,
+  GithubOutlined,
   InsertRowAboveOutlined,
   InsertRowLeftOutlined,
 } from '@ant-design/icons';
@@ -48,10 +48,10 @@ const HeaderRight: FC<Props> = (props) => {
         )}
       </a>
       <a
-        href="https://gitlab.kstonedata.k2/liyao/portal-monorepo-dem"
+        href="https://k2-portal-demo.vercel.app/"
         className={styles.action}
       >
-        <GitlabOutlined style={{ fontSize: 18 }} /> GitLab
+        <GithubOutlined style={{ fontSize: 18 }} /> GitLab
       </a>
       <ThemeSelector whiteIcon={props.whiteIcon} />
     </div>
