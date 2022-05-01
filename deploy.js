@@ -19,7 +19,9 @@ process.execSync("cp -r ./packages/antd-ui/dist/* ./dist/apps/antd-ui/");
 
 process.execSync("mkdir -p dist/apps/compatibility");
 process.execSync("yarn workspace compatibility build");
-process.execSync("cp -r ./packages/compatibility/dist/* ./dist/apps/compatibility/");
+process.execSync(
+  "cp -r ./packages/compatibility/dist/* ./dist/apps/compatibility/"
+);
 
 process.execSync("mkdir -p dist/apps/features");
 process.execSync("yarn workspace features build");
@@ -27,4 +29,9 @@ process.execSync("cp -r ./packages/features/dist/* ./dist/apps/features/");
 
 process.execSync("mkdir -p dist/apps/editor");
 process.execSync("yarn workspace editor build");
-process.execSync("cp -r ./packages/editor/dist/* ./dist/apps/editor/");
+console.log("editor compiles done.");
+try {
+  process.execSync("cp -r ./packages/editor/dist/* ./dist/apps/editor/");
+} catch(e) {
+  console.log(e)
+}
