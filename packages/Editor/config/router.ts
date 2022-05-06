@@ -8,7 +8,6 @@ const routes: IBestAFSRoute[] = [
       {
         path: '.',
         component: '@/pages/Home',
-        title: 'Editor',
       },
     ],
   }

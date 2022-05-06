@@ -6,6 +6,9 @@ const portal: IConfigFromPlugins['portal'] = {
   nacos: {
     default: {
       appRootPathName: '/apps',
+      service: {
+        graphql: 'https://graphql-demo.mead.io/',
+      },
     },
   },
 };

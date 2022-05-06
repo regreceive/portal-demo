@@ -5,7 +5,7 @@ import proxy from './proxy';
 import portal from './portal';
 
 export default defineConfig({
-  title: 'app',
+  title: false,
   fastRefresh: {},
   nodeModulesTransform: {
     type: 'none',
