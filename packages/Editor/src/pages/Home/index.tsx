@@ -38,7 +38,7 @@ const Editor: FC = () => {
   }, []);
 
   useEffect(() => {
-    editorInstance.current?.setValue(appProps.value);
+    editorInstance.current?.setValue(appProps.value || '');
   }, [appProps.value]);
 
   return <div ref={ref} style={{ height: '100%' }} />;

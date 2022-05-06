@@ -1,6 +1,6 @@
-import { FC, useState } from 'react';
+import { FC } from 'react';
 import { Typography } from 'antd';
-import { Widget } from 'k2-portal';
+import { Widget, utils, portal } from 'k2-portal';
 import BoxArea from '@/components/BoxArea';
 import StaticBar from './components/StaticBar';
 import PaperDemo from './components/PaperDemo';
@@ -15,9 +15,9 @@ const Home: FC = () => {
       <BoxArea
         title="兼容性说明"
         style={{ marginBottom: 12 }}
-        rightArea={
+        rightArea={utils.isInWidget() && 
           <a
-            href="https://k2-portal-demo.vercel.app/apps/compatibility/"
+            href={`${portal.config.nacos.appRootPathName}/compatibility/`}
             target="_blank"
           >
             打开独立应用

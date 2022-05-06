@@ -1,16 +1,15 @@
-# 请求菜单
-query menu($title: String) {
-  bcf_front_menu(filter: {title: $title}) {
+query post($id: ID!){
+  post(id: $id) {
     id
-    menu_id
     title
+    body
   }
 }
 
-#请求应用
-query apps {
-  bcf_front_apps {
-    key
-    name
+query posts {
+  posts {
+    id
+    title
+    body
   }
 }

@@ -17,6 +17,7 @@ import {
   Timeline,
 } from 'antd';
 import { history } from 'umi';
+import { utils, portal } from 'k2-portal';
 import BoxArea from '@/components/BoxArea';
 import styles from './style.less';
 
@@ -100,12 +101,14 @@ const Home: FC = () => {
     <BoxArea
       title="Antd UI"
       rightArea={
-        <a
-          href="https://k2-portal-demo.vercel.app/apps/antd-ui/"
-          target="_blank"
-        >
-          打开独立应用
-        </a>
+        utils.isInWidget() && (
+          <a
+            href={`${portal.config.nacos.appRootPathName}/antd-ui/`}
+            target="_blank"
+          >
+            打开独立应用
+          </a>
+        )
       }
     >
       <div className={styles.grid}>

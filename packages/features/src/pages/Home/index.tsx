@@ -1,6 +1,6 @@
 import { FC, useState } from 'react';
 import { Button, Space } from 'antd';
-import { useLazyQuery, Widget } from 'k2-portal';
+import { useLazyQuery, Widget, utils, portal } from 'k2-portal';
 import BoxArea from '@/components/BoxArea';
 import service from '@/services/index.gql';
 import styles from './style.less';
@@ -11,7 +11,7 @@ import { useLazyQuery } from 'k2-portal';
 import service from './index.gql';
 
 const Home: FC = () => {
-  const [getApps, { data }] = useLazyQuery(service.apps.gql);
+  const [getApps, { data }] = useLazyQuery(service.users.gql);
   const [promiseData, setPromiseData] = useState<any>();
 
   return (
@@ -22,15 +22,14 @@ const Home: FC = () => {
       <Button
         onClick={() => {
           getApps();
-          setPromiseData(undefined);
         }}
       >
         hooks方式
       </Button>
       <Button
         onClick={() => {
-          service.menu
-            .send({ title: '应用配置' })
+          service.post
+            .send({ id: 'af94bcc5-4d34-49a0-b898-c834c0bea612' })
             .then((res) => setPromiseData(res));
         }}
       >
@@ -44,24 +43,27 @@ export default Home;
 `;
 
 const Home: FC = () => {
-  const [getApps, { data }] = useLazyQuery(service.apps.gql);
+  const [getPosts, { data, loading }] = useLazyQuery(service.posts.gql);
   const [promiseData, setPromiseData] = useState<any>();
+  const [promiseLoading, setPromiseLoading] = useState(false);
 
   return (
     <>
       <BoxArea
-        title="建模器3.0请求示例"
-        height={300}
+        title="graphql 请求示例"
+        height={400}
         rightArea={
-          <a
-            href="https://k2-portal-demo.vercel.app/apps/features/"
-            target="_blank"
-          >
-            打开独立应用
-          </a>
+          utils.isInWidget() && (
+            <a
+              href={`${portal.config.nacos.appRootPathName}/features/`}
+              target="_blank"
+            >
+              打开独立应用
+            </a>
+          )
         }
       >
-        <div className={styles.grid2}>
+        <div className={styles.grid}>
           <div
             style={{ position: 'relative', height: '100%', overflow: 'auto' }}
           >
@@ -72,18 +74,24 @@ const Home: FC = () => {
               <Space>
                 <Button
                   onClick={() => {
-                    getApps();
                     setPromiseData(undefined);
+                    getPosts();
                   }}
+                  loading={loading}
                 >
                   hooks方式
                 </Button>
                 <Button
                   onClick={() => {
-                    service.menu
-                      .send({ title: '应用配置' })
-                      .then((res) => setPromiseData(res));
+                    setPromiseLoading(true);
+                    service.post
+                      .send({ id: 'af94bcc5-4d34-49a0-b898-c834c0bea612' })
+                      .then((res) => {
+                        setPromiseData(res);
+                        setPromiseLoading(false);
+                      });
                   }}
+                  loading={promiseLoading}
                 >
                   promise方式
                 </Button>
@@ -95,6 +103,10 @@ const Home: FC = () => {
             appProps={{ value: code }}
             style={{ height: '100%' }}
           />
+        </div>
+        <div style={{ lineHeight: 2, color: 'rgba(127,127,127,0.5)' }}>
+          The service of GraphQL above is provided by{' '}
+          <a href="https://graphql-demo.mead.io/">mead.io</a>
         </div>
       </BoxArea>
     </>
