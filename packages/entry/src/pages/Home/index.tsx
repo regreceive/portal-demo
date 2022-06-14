@@ -52,21 +52,20 @@ const Home: FC = () => {
           onClick={handleClick}
           mode="horizontal"
           theme="dark"
-        >
-          <Menu.Item key="antd-ui" icon={<UserOutlined />}>
-            antd-ui
-          </Menu.Item>
-          <Menu.Item key="compatibility" icon={<VideoCameraOutlined />}>
-            兼容性
-          </Menu.Item>
-          <Menu.Item key="features" icon={<UploadOutlined />}>
-            新特性
-          </Menu.Item>
-        </Menu>
+          items={[
+            { key: 'antd-ui', icon: <UserOutlined />, label: 'antd-ui' },
+            {
+              key: 'compatibility',
+              icon: <VideoCameraOutlined />,
+              label: '兼容性',
+            },
+            { key: 'features', icon: <UploadOutlined />, label: '新特性' },
+          ]}
+        />
         <HeaderRight whiteIcon />
       </Layout.Header>
       <Layout.Content className={styles.content}>
-        <Widget src="" appRoot className={styles.app} />
+        <Widget src="" appRoot style={{ height: '100%' }} />
       </Layout.Content>
     </Layout>
   );
