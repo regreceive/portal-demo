@@ -10,10 +10,12 @@ const routes: IBestAFSRoute[] = [
     component: '@/layouts/BasicLayout',
     routes: [
       {
+        title: 'home',
         path: './home',
         component: '@/pages/Home',
       },
       {
+        title: 'page',
         path: './page',
         component: '@/pages/Page1',
       },

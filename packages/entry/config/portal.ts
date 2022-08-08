@@ -5,7 +5,7 @@ const portal: IConfigFromPlugins['portal'] = {
     default: {
       appRootPathName: '/apps',
     }
-  }
+  },
 };
 
 export default portal;

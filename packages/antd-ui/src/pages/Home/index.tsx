@@ -115,7 +115,7 @@ const Home: FC = () => {
         <div>
           <Dropdown
             arrow
-            placement="bottomCenter"
+            placement="bottom"
             overlay={
               <Menu>
                 <Menu.Item>1st menu item</Menu.Item>
