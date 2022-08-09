@@ -8,6 +8,7 @@
     "deploy": "node ./deploy.js"
   },
   "devDependencies": {
-    "lerna": "^4.0.0"
+    "lerna": "^4.0.0",
+    "mkdirp": "^1.0.4"
   }
 }
